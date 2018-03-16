@@ -7,9 +7,9 @@
     "dev:server": "rm -rf ./server/bin && webpack --config webpack/server.dev.js",
     "dev:client": "webpack-dev-server --config webpack/client.dev.js",
     "dev": "rm -rf ./server/bin && npm-run-all --parallel dev:server dev:client",
-    "build": "rm -rf ./server/bin npm-run-all --parallel build:client build:server",
-    "build:server": "cross-env NODE_ENV=production webpack --config webpack/server.prod.js --progress",
-    "build:client": "cross-env NODE_ENV=production webpack --config webpack/client.prod.js --progress",
+    "build": "rm -rf ./server/bin && npm-run-all --parallel build:client build:server",
+    "build:server": "NODE_ENV=production webpack --config webpack/server.prod.js --progress",
+    "build:client": "NODE_ENV=production webpack --config webpack/client.prod.js --progress",
     "start": "cd server && node bin/server.js",
     "lint": "eslint --ext .jsx,.js ./"
   },
@@ -33,7 +33,6 @@
   },
   "homepage": "https://github.com/tahnik/react-express-webpack-babel#readme",
   "dependencies": {
-    "cross-env": "^5.1.4",
     "ejs": "^2.5.7",
     "express": "^4.16.3",
     "prop-types": "^15.6.1",
@@ -71,7 +70,6 @@
     "webpack-node-externals": "^1.6.0"
   },
   "bundledDependencies": [
-    "cross-env",
     "ejs",
     "express",
     "prop-types",
