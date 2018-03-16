@@ -7,7 +7,7 @@ module.exports = {
   context: path.join(__dirname, '../server'),
   devtool: 'source-map',
   entry: [
-    './routes/index.js',
+    './src/index.js',
   ],
   target: 'node',
   output: {
@@ -22,9 +22,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-1'],
-          },
         },
       },
       {
@@ -35,7 +32,7 @@ module.exports = {
             options: {
               outputPath: 'images/',
               emitFile: false,
-            }  
+            }
           }
         ]
       },

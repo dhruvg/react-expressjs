@@ -3,4 +3,4 @@ webpack
 .babelrc
 .eslintrc.json
 package-lock.json
-server/routes
+server/src

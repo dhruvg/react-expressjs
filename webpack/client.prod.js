@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     './src/index.js',
-    './res/scss/main.scss',
+    './assets/scss/main.scss',
   ],
   output: {
     path: path.join(__dirname, '../server/public'),
@@ -21,9 +21,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['react', 'es2015', 'stage-1'],
-          },
         },
       },
       {
