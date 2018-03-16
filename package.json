@@ -1,7 +1,7 @@
 {
   "name": "react-expressjs",
   "version": "4.0.0",
-  "description": "Boilerplate for ReactJS project with ExpressJS server",
+  "description": "Boilerplate for my React + Redux + Express projects",
   "main": "server/bin/server.js",
   "scripts": {
     "build:dev:server": "rm -rf ./server/bin && webpack --config webpack/server.dev.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tahnik/react-express-webpack-babel"
+    "url": "git+https://github.com/dhruvg/react-expressjs"
   },
   "keywords": [
     "react",
@@ -26,12 +26,12 @@
     "react router v4",
     "redux"
   ],
-  "author": "Tahnik Mustasin",
+  "author": "Dhruv Garg",
+  "contributors": [
+    "Tahnik Mustasin"
+  ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tahnik/react-express-webpack-babel/issues"
-  },
-  "homepage": "https://github.com/tahnik/react-express-webpack-babel#readme",
+  "homepage": "https://github.com/dhruvg/react-expressjs#readme",
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.3",
