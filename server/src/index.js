@@ -1,14 +1,16 @@
-import express from 'express';
-import server from './server';
-
-const app = express();
+import http from 'http';
+import app from './server';
 
 app.set('view engine', 'ejs');
 
-app.use(express.static('public'));
+const server = http.createServer(app);
+let currentApp = app;
+server.listen(3000);
 
-app.use('/*', server);
-
-app.listen(3000, () => {
-  console.log('Hello World listening on port 3000!');
-});
+if (module.hot) {
+  module.hot.accept('./server', () => {
+    server.removeListener('request', currentApp);
+    server.on('request', app);
+    currentApp = app;
+  });
+}

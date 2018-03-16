@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, '../client'),
@@ -39,19 +40,27 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {}
+            options: {
+              outputPath: 'images/',
+            }
           }
         ]
       },
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      }
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(__dirname, '../server/views/index.dev.ejs'),
+      template: path.join(__dirname, '../client/views/index.ejs'),
       inject: false,
     }),
+    new ExtractTextPlugin('css/main.css'),
   ],
 };
