@@ -15,7 +15,7 @@ app.get('/api', (req, res) => {
   res.send({ message: 'I am a server route.' });
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   const store = createStore(reducers);
 
   const context = {};
@@ -39,16 +39,7 @@ app.get('*', (req, res) => {
     });
     res.end();
   } else {
-
-    // Hack
-    let templatePath;
-    if (process.env.NODE_ENV === 'development') {
-      templatePath = '../server/views/index.ejs';
-    } else {
-      templatePath = '../views/index.ejs';
-    }
-
-    res.status(200).render(templatePath, {
+    res.status(200).render('../views/index.ejs', {
       html,
       script: JSON.stringify(finalState),
     });

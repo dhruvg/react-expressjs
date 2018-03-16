@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
-const StartServerPlugin = require('start-server-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, '../server'),
@@ -41,7 +40,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new StartServerPlugin('./server.js'),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
