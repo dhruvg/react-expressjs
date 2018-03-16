@@ -4,12 +4,13 @@
   "description": "Boilerplate for ReactJS project with ExpressJS server",
   "main": "server/bin/server.js",
   "scripts": {
-    "dev:server": "rm -rf ./server/bin && webpack --config webpack/server.dev.js",
-    "dev:client": "webpack-dev-server --config webpack/client.dev.js",
-    "dev": "rm -rf ./server/bin && npm-run-all --parallel dev:server dev:client",
+    "build:dev_server": "rm -rf ./server/bin && webpack --config webpack/server.dev.js",
+    "build:dev_client": "rm -rf ./server/public && webpack --config webpack/client.dev.js",
+    "dev:client": "webpack-dev-server --config webpack/client_only.dev.js",
+    "dev:server": "rm -rf ./server/bin && npm-run-all --parallel build:dev_server build:dev_client",
     "build": "rm -rf ./server/bin && npm-run-all --parallel build:client build:server",
     "build:server": "NODE_ENV=production webpack --config webpack/server.prod.js --progress",
-    "build:client": "NODE_ENV=production webpack --config webpack/client.prod.js --progress",
+    "build:client": "rm -rf ./server/public && NODE_ENV=production webpack --config webpack/client.prod.js --progress",
     "start": "cd server && node bin/server.js",
     "lint": "eslint --ext .jsx,.js ./"
   },

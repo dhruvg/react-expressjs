@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -17,6 +18,11 @@ module.exports = {
     filename: './js/index.js',
     publicPath: '/',
   },
+  devServer: {
+    hot: true,
+    publicPath: '/',
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {
@@ -28,10 +34,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        }),
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -54,6 +57,11 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.join(__dirname, '../client/views/index.ejs'),
+      inject: false,
+    }),
     new ExtractTextPlugin('css/main.css'),
   ],
 };
