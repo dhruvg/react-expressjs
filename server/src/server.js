@@ -39,9 +39,14 @@ app.get('/', (req, res) => {
     });
     res.end();
   } else {
+    let assetUrlPrefix = '';
+    if (process.env.NODE_ENV === 'development') {
+      assetUrlPrefix = 'http://localhost:8080';
+    }
     res.status(200).render('../views/index.ejs', {
       html,
       script: JSON.stringify(finalState),
+      assetUrlPrefix,
     });
   }
 });
