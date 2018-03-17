@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ListItemPreview from '../components/list_item_preview';
+import ListItemPreview from '../components/ListItemPreview';
 
 /*
  This is a redux specific function.

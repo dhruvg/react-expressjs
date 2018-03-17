@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router';
 import configureStore from '../../client/src/configure_store';
-import App from '../../client/src/app';
+import App from '../../client/src/App';
 
 const app = express();
 

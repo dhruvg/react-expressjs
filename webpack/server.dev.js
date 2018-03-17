@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -48,5 +48,8 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development')
       }
     }),
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
 };

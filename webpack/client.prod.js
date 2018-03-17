@@ -7,7 +7,7 @@ module.exports = {
   context: path.join(__dirname, '../client'),
   devtool: 'source-map',
   entry: [
-    './src/index.js',
+    './src/index.jsx',
     './assets/style/main.scss',
   ],
   output: {
@@ -17,7 +17,7 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -52,4 +52,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('css/main.css'),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
 };

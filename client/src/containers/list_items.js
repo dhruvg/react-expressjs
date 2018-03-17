@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { previewItem } from '../actions/list_actions';
-import ListItems from '../components/list_items';
+import ListItems from '../components/ListItems';
 
 /*
 This is a redux specific function.

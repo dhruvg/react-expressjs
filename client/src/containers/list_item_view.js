@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { viewItem } from '../actions/list_actions';
-import ItemView from '../components/list_item_view';
+import ItemView from '../components/ListItemView';
 
 const mapStateToProps = state => ({
   item: state.list.itemView,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Header from './components/header';
-import Home from './components/home';
+import Header from './components/Header';
+import Home from './components/Home';
 import ItemView from './containers/list_item_view';
 
 const App = () => (

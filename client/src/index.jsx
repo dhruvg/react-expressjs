@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './app';
+import App from './App';
 import configureStore from './configure_store';
 
 /*
@@ -32,9 +32,9 @@ const render = (Component) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('./app', () => {
+  module.hot.accept('./App', () => {
     // eslint-disable-next-line
-    const nextApp = require('./app').default;
+    const nextApp = require('./App').default;
     render(nextApp);
   });
   module.hot.accept('./reducers', () => {
