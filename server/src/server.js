@@ -1,10 +1,9 @@
 import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router';
-import reducers from '../../client/src/reducers/index';
+import configureStore from '../../client/src/configure_store';
 import App from '../../client/src/app';
 
 const app = express();
@@ -16,7 +15,7 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  const store = createStore(reducers);
+  const store = configureStore();
 
   const context = {};
 
