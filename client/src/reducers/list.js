@@ -13,8 +13,7 @@ export default (state = LISTS, action) => {
       const nextItems = { ...state.items };
       const itemToAdd = action.item;
       nextItems[itemToAdd.name.toUpperCase()] = itemToAdd;
-      const returnVal = { ...state, items: nextItems };
-      return returnVal;
+      return { ...state, items: nextItems };
     }
     default:
       return state;
