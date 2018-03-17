@@ -8,7 +8,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     './src/index.js',
-    './assets/scss/main.scss',
+    './assets/style/main.scss',
   ],
   output: {
     path: path.join(__dirname, '../server/public'),
@@ -31,7 +31,7 @@ module.exports = {
         }),
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [{
           loader: 'file-loader',
           options: {

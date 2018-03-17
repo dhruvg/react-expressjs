@@ -66,3 +66,6 @@ typings/
 
 # Webstorm
 .idea/
+
+# Filesystem
+.DS_Store
