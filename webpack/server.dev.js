@@ -6,6 +6,7 @@ module.exports = {
   context: path.join(__dirname, '../server'),
   devtool: 'source-map',
   entry: [
+    'babel-regenerator-runtime',
     'webpack/hot/poll?1000',
     './src/index.js',
   ],

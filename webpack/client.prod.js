@@ -7,6 +7,7 @@ module.exports = {
   context: path.join(__dirname, '../client'),
   devtool: 'source-map',
   entry: [
+    'babel-regenerator-runtime',
     './src/index.jsx',
     './assets/style/main.scss',
   ],

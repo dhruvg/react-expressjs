@@ -15,7 +15,7 @@ It builds on this great foundation: https://github.com/tahnik/react-expressjs
 
 # Installation
 
-Node Version: v7.4.0
+Node Version: v9.8.0
 
 Just clone this repo or download the zip file. `cd` into the directory and run
 
