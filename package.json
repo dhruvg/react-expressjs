@@ -55,6 +55,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "@types/express": "^4.11.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
