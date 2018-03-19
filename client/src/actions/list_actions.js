@@ -1,4 +1,4 @@
-import { LIST_ACTIONS } from '../consts/action_types';
+import { LIST_ACTIONS } from '../constants/action_types';
 
 export const previewItem = name => ({
   type: LIST_ACTIONS.ITEM_PREVIEW,

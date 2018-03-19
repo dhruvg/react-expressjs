@@ -1,5 +1,5 @@
-import { LIST_ACTIONS } from '../consts/action_types';
-import { LISTS } from '../consts/default_state';
+import { LIST_ACTIONS } from '../constants/action_types';
+import { LISTS } from '../constants/default_state';
 
 export default (state = LISTS, action) => {
   switch (action.type) {
