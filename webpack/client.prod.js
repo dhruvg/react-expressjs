@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, '../client'),
@@ -52,6 +53,13 @@ module.exports = {
       sourceMap: true
     }),
     new ExtractTextPlugin('css/main.css'),
+    new CopyWebpackPlugin([
+      {
+        from: './assets/images/static',
+        to: 'images',
+        force: true
+      },
+    ]),
   ],
   resolve: {
     extensions: ['.js', '.jsx']
